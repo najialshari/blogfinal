@@ -1,0 +1,52 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+}
+
+/* navContainer used to control navbar with higher layer z-index 2 to be above carousel */
+/* .navContainer {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  height: 70px;
+  z-index: 2;
+} */
+
+/* mainContainer used to wrap all components with lower layer z-index 1 */
+.mainContainer {
+  margin-top: 70px;
+  /* z-index: 1; */
+}
+
+.carousel {
+  margin-top: 70px;
+}
+
+.footer section p {
+margin-bottom :10px
+}
+
+.copyRights {
+  padding: 60px 0 120px;
+}
+.comments{
+  position: sticky;
+  top: 90px;
+} 
+li{
+  list-style:none;
+  font-weight: bold;
+  
+}
+
+.mycard{
+    position: relative;
+   text-align: center;
+   top: -80px; 
+   left: 7.5% ;
+   width: 85%;  
+   background-color: white;
+
+  }
