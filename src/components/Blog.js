@@ -46,10 +46,11 @@ const Blog = () => {
                                     <div className="card-body text-center rounded-top mycard">
 
                                         <Link to={`/blog/${post.slug}`} className="nav-link card-title">
-                                            <h3 className="fw-bold py-sm-2 px-sm-3 px-md-2">{HTMLReactParser(post.title)}</h3></Link>
+                                            <h3 className="fw-bold py-sm-2 px-sm-3 px-md-2">{HTMLReactParser(post.title)}</h3>
+                                        </Link>
                                         <p className="card-text">{HTMLReactParser(post.excerpt)}</p>
 
-                                        <BlogIcons post={post}/>
+                                        <BlogIcons post={post} />
 
 
                                     </div>

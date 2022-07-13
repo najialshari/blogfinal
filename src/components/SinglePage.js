@@ -17,11 +17,11 @@ const SinglePage = () => {
             .catch("Error Blogs...")
         // eslint-disable-next-line react-hooks/exhaustive-deps      
     }, [])
-
+    window.scrollTo(0,0)
     return (
         <>
 
-            <Title titleText={slug} />
+            <Title titleText={blogs.length !== 0 ? HTMLReactParser(blogs.data.title) : null} />
 
             <div className="blogFrame container mt-5" >
 
