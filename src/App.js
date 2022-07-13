@@ -19,6 +19,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/blog' element={<Blog />} />
           <Route path='/blog/:slug' element={<SinglePage />} />
+          <Route path='/*' element={<Home />} />
         </Routes>
       </div>
       <Footer />

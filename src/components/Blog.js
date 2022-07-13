@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import "../../node_modules/bootstrap-icons/font/bootstrap-icons.css"
 import Comments from "./Comments"
 import Title from "./Title"
+import BlogIcons from "./BlogIcons"
 
 const Blog = () => {
 
@@ -11,7 +12,6 @@ const Blog = () => {
     const [loadNew, setLoadNew] = useState(false)
     const [haveMore, setHaveMore] = useState('')
     const [pageNumber, setPageNumber] = useState(1)
-
 
 
     useEffect(() => {
@@ -24,7 +24,7 @@ const Blog = () => {
                 setLoadNew(false)
             })
             .catch("Error Blogs...")
-            // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [pageNumber])
 
     return (
@@ -33,10 +33,10 @@ const Blog = () => {
 
             <Title titleText={'Our Latest Posts'} />
 
-            <div className="container d-flex mt-5" >
+            <div className="blogFrame container mt-5" >
 
                 {blogs.length !== 0 ?
-                    <div className="col" >
+                    <div className="col-md-8 col-12" >
                         {blogs.map((blog) => (
                             blog.data.map((post, index) => (
 
@@ -47,12 +47,10 @@ const Blog = () => {
 
                                         <Link to={`/blog/${post.slug}`} className="nav-link card-title">
                                             <h3 className="fw-bold">{HTMLReactParser(post.title)}</h3></Link>
-                                        <label className="card-text me-3 mb-1">{HTMLReactParser(post.excerpt)}</label>
+                                        <label className="card-text me-3 mb-2">{HTMLReactParser(post.excerpt)}</label>
 
-                                        <strong style={{ fontSize: '13px' }}>
-                                            <i className="bi bi-eye"></i>&nbsp;&nbsp;{post.views}&nbsp;
-                                            /&nbsp;&nbsp;<i className="bi bi-calendar-event"></i>&nbsp;&nbsp;{post.date}&nbsp;
-                                            /&nbsp;&nbsp;<i className="bi bi-tags"></i>&nbsp;&nbsp;{post.tags.join(', ')}</strong>
+                                        <BlogIcons post={post}/>
+
 
                                     </div>
                                 </div>

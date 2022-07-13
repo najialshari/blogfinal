@@ -34,7 +34,14 @@ margin-bottom :10px
 .comments{
   position: sticky;
   top: 90px;
+  height: fit-content;
 } 
+@media (min-width:768px) {
+  .blogFrame{
+    display: flex;
+  }
+  
+}
 li{
   list-style:none;
   font-weight: bold;
@@ -50,3 +57,7 @@ li{
    background-color: white;
 
   }
+.title{
+  font-size: 50px;
+  font-weight: 600;
+}

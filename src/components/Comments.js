@@ -4,14 +4,13 @@ import { useEffect, useState } from "react"
 const Comments = () => {
 
     const [comments, setComments] = useState([])
-    const [commentsHeight, setCommentsHeight] = useState(0)
 
     useEffect(() => {
         fetch('https://www.wp-course.site/wp-json/wp/v2/comments')
             .then(responce => responce.json())
             .then(result => {
                 setComments(result)
-                setCommentsHeight(result.length * 100 + 50)
+                
             })
             .catch("Error Comments...")
     }, [])
@@ -20,7 +19,7 @@ const Comments = () => {
 
         <>
             {comments.length !== 0 ? 
-                <div className="comments col-4 ps-3" style={{ height: commentsHeight + 'px' }}>
+                <div className="comments col-md-4 col-12 ps-3" >
                     <h4 className="mb-4">Latest Comments</h4>
                     {comments.map((comment, index) => (
 

@@ -44,9 +44,9 @@ const Footer = () => {
 
     return (
         <div className=" fluid bg-light border-top">
-            <div className='footer container pt-4 mt-3'>
+            <div className='footer container mt-5'>
                 <div className="row">
-                    <section className='col-2 text-start text-muted'>
+                    <section className='col-lg-2 col-sm-4 col-12 mb-3 text-start text-muted'>
                         <h5 className='text-dark'>Links</h5>
                         <p><Link className='nav-link ' to='/'>Home</Link></p>
                         <p><Link className='nav-link' to='/'>Features</Link></p>
@@ -54,7 +54,7 @@ const Footer = () => {
                         <p><Link className='nav-link' to='/'>FAQs</Link></p>
                         <p><Link className='nav-link' to='/'>About</Link></p>
                     </section>
-                    <section className='col-2 text-start text-muted'>
+                    <section className='col-lg-2 col-sm-4 col-12 mb-3 text-start text-muted'>
                         <h5 className='text-dark'>Guides</h5>
                         <p><Link className='nav-link' to='/'>Get Started</Link></p>
                         <p><Link className='nav-link' to='/'>Documents</Link></p>
@@ -62,7 +62,7 @@ const Footer = () => {
                         <p><Link className='nav-link' to='/'>Tutorials</Link></p>
                         <p><Link className='nav-link' to='/'>References</Link></p>
                     </section>
-                    <section className='col-2 text-start text-muted'>
+                    <section className='col-lg-2 col-sm-4 col-12 mb-3 text-start text-muted'>
                         <h5 className='text-dark'>Support</h5>
                         <p><Link className='nav-link' to='/'>Community</Link></p>
                         <p><Link className='nav-link' to='/'>Forum</Link></p>
@@ -71,7 +71,7 @@ const Footer = () => {
                         <p><Link className='nav-link' to='/'>Email</Link></p>
                     </section>
 
-                    <div className='container col-4'>
+                    <div className='container col-lg-4 col-12'>
                         <h5>Subscribe to our Newsletter</h5>
                         <p>Monthly digest of whats new and exciting from us.</p>
 
