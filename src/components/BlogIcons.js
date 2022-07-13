@@ -10,27 +10,27 @@ const BlogIcons = ({ post }) => {
 
     return (
         isPhone ?
-            <div className="bg-info d-flex" style={{ fontSize: '13px' }}>
+            <div className="container d-flex justify-content-center align-items-center" style={{ fontSize: '13px' }}>
 
                 <div>
-                    <li className="list-inline-item"><i className="bi bi-eye"></i>&nbsp;&nbsp;{post.views}&nbsp;</li>
+                    <li className="list-inline-item px-2"><i className="bi bi-eye"></i>&nbsp;&nbsp;{post.views}</li>
                 </div>
-                <div>/&nbsp;&nbsp;</div>
-                  <div>
-                      <li className="list-inline-item"><i className="bi bi-calendar-event"></i>&nbsp;&nbsp;{post.date}&nbsp;</li>
+                <div>/</div>
+                <div>
+                    <li className="list-inline-item px-2"><i className="bi bi-calendar-event"></i>&nbsp;&nbsp;{post.date}</li>
                 </div>
-                    
-                        <div>/&nbsp;&nbsp;</div>
-                        <div>
-                            <li className="list-inline-item"><i className="bi bi-tags"></i>&nbsp;&nbsp;{post.tags.join(', ')}</li>
-                            </div >
+
+                <div>/</div>
+                <div>
+                    <li className="list-inline-item ps-2"><i className="bi bi-tags"></i>&nbsp;&nbsp;{post.tags.join(', ')}</li>
+                </div >
             </div >
             :
-<div className="text-start" style={{ fontSize: '13px' }}>
-    <li><i className="bi bi-eye"></i>&nbsp;&nbsp;{post.views}</li>
-    <li><i className="bi bi-calendar-event"></i>&nbsp;&nbsp;{post.date}</li>
-    <li><i className="bi bi-tags"></i>&nbsp;&nbsp;{post.tags.join(', ')}</li>
-</div>
+            <div className="text-start" style={{ fontSize: '13px' }}>
+                <li><i className="bi bi-eye"></i>&nbsp;&nbsp;{post.views}</li>
+                <li><i className="bi bi-calendar-event"></i>&nbsp;&nbsp;{post.date}</li>
+                <li><i className="bi bi-tags"></i>&nbsp;&nbsp;{post.tags.join(', ')}</li>
+            </div>
     )
 
 }

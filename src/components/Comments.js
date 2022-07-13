@@ -19,7 +19,7 @@ const Comments = () => {
 
         <>
             {comments.length !== 0 ? 
-                <div className="comments col-md-4 col-12 ps-3" >
+                <div className="comments col-md-4 col-12" >
                     <h4 className="mb-4">Latest Comments</h4>
                     {comments.map((comment, index) => (
 

@@ -36,18 +36,18 @@ const Blog = () => {
             <div className="blogFrame container mt-5" >
 
                 {blogs.length !== 0 ?
-                    <div className="col-md-8 col-12" >
+                    <div className="col-md-8 col-12 me-3" >
                         {blogs.map((blog) => (
                             blog.data.map((post, index) => (
 
                                 <div className="card border-0 me-2" key={index}>
                                     <img src={post.thumbnail} className="card-image-top rounded-top" alt='...' />
 
-                                    <div className="card-body rounded-top mycard">
+                                    <div className="card-body text-center rounded-top mycard">
 
                                         <Link to={`/blog/${post.slug}`} className="nav-link card-title">
-                                            <h3 className="fw-bold">{HTMLReactParser(post.title)}</h3></Link>
-                                        <label className="card-text me-3 mb-2">{HTMLReactParser(post.excerpt)}</label>
+                                            <h3 className="fw-bold py-sm-2 px-sm-3 px-md-2">{HTMLReactParser(post.title)}</h3></Link>
+                                        <p className="card-text">{HTMLReactParser(post.excerpt)}</p>
 
                                         <BlogIcons post={post}/>
 

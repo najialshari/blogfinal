@@ -52,12 +52,29 @@ li{
     position: relative;
    text-align: center;
    top: -80px; 
-   left: 7.5% ;
-   width: 85%;  
+   left: 60px ;
+   /* right: 50px; */
+   width:calc(100% - 120px) ; 
    background-color: white;
 
   }
+@media (max-width:576px) {
+  
+ .mycard{
+    width:calc(100% - 30px);
+    left:15px;
+  }
+}
+
+
 .title{
   font-size: 50px;
-  font-weight: 600;
+  font-weight: 600px;
 }
+@media (max-width:1200px) {
+  
+  .title{
+    font-size: 35px;
+    font-weight: 200px;
+   }
+ }
