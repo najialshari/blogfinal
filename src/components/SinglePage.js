@@ -19,8 +19,11 @@ const SinglePage = () => {
     }, [])
     window.scrollTo(0, 0)
     return (
+        blogs &&
         <>
 
+            
+            
             <Title titleText={blogs.length !== 0 ? HTMLReactParser(blogs.data.title) : null} />
 
             <div className="blogFrame container mt-5" >
