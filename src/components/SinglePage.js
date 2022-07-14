@@ -17,7 +17,7 @@ const SinglePage = () => {
             .catch("Error Blogs...")
         // eslint-disable-next-line react-hooks/exhaustive-deps      
     }, [])
-    window.scrollTo(0,0)
+    window.scrollTo(0, 0)
     return (
         <>
 
@@ -31,24 +31,26 @@ const SinglePage = () => {
                         <div className="card border-0 me-2">
                             <img src={blogs.data.thumbnail} className="card-image-top " alt='...' />
                             <div className="card-body p-0 mt-4">
-                                
-                                <div className='bg-light d-flex justify-content-between align-items-baseline'>
+
+                                <div className='bg-light d-flex justify-content-between align-items-center'>
+
                                     <div className='d-flex ps-2'>
                                         <div ><i className="bi bi-person"></i>&nbsp;&nbsp;</div>
                                         <div className="fw-bold">{blogs.data.author}</div>
                                     </div>
-                                
+
                                     <div><BlogIcons post={blogs.data} /></div>
 
                                 </div>
-                                
+
                                 <article className="card-text me-3 my-4">{HTMLReactParser(blogs.data.content)}</article>
 
                             </div>
                         </div>
 
                     </div>
-                    : <div className="col text-center text-primary">
+                    : 
+                    <div className="col text-center text-primary">
                         <div className="spinner-border" role='status'></div>
                     </div>}
 

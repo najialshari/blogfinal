@@ -26,7 +26,7 @@ const BlogIcons = ({ post }) => {
                 </div >
             </div >
             :
-            <div className="text-start" style={{ fontSize: '13px' }}>
+            <div className='text-start' style={{ fontSize: '13px' }}>
                 <li><i className="bi bi-eye"></i>&nbsp;&nbsp;{post.views}</li>
                 <li><i className="bi bi-calendar-event"></i>&nbsp;&nbsp;{post.date}</li>
                 <li><i className="bi bi-tags"></i>&nbsp;&nbsp;{post.tags.join(', ')}</li>
