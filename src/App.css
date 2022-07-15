@@ -85,6 +85,6 @@ li {
   }
 }
 
-.parser img, figcaption, figure {
+.parser * {
   width: 100%
 }
