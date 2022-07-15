@@ -24,6 +24,9 @@ const Blog = () => {
                 setLoadNew(false)
             })
             .catch("Error Blogs...")
+
+        // add the next line 'eslint-...' at the end of useEffect to stop dependency warrning 
+
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [pageNumber])
 
@@ -34,6 +37,9 @@ const Blog = () => {
             <Title titleText={'Our Latest Posts'} />
 
             <div className="blogFrame container mt-5" >
+
+                {/* if jsx references to useEffect results, use condition to handle case before before finish execution
+                or you will get errors says "undefined"  */}
 
                 {blogs.length !== 0 ?
                     <div className="col-md-8 col-12 me-3" >

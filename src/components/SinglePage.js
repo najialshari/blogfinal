@@ -15,15 +15,21 @@ const SinglePage = () => {
             .then(responce => responce.json())
             .then(result => setBlogs(result))
             .catch("Error Blogs...")
+
+        // add the next line 'eslint-...' at the end of useEffect to stop dependency warrning 
+
         // eslint-disable-next-line react-hooks/exhaustive-deps      
     }, [])
+
     window.scrollTo(0, 0)
+
     return (
-        blogs &&
+
         <>
 
-            
-            
+            {/* if jsx references to useEffect results, use condition to handle case before before finish execution
+                or you will get errors says "undefined"  */}
+
             <Title titleText={blogs.length !== 0 ? HTMLReactParser(blogs.data.title) : null} />
 
             <div className="blogFrame container mt-5" >
@@ -52,7 +58,7 @@ const SinglePage = () => {
                         </div>
 
                     </div>
-                    : 
+                    :
                     <div className="col text-center text-primary">
                         <div className="spinner-border" role='status'></div>
                     </div>}

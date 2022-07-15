@@ -10,15 +10,23 @@ const Comments = () => {
             .then(responce => responce.json())
             .then(result => {
                 setComments(result)
-                
+
             })
             .catch("Error Comments...")
+
+        // add the next line 'eslint-...' at the end of useEffect to stop dependency warrning 
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (
 
         <>
-            {comments.length !== 0 ? 
+
+            {/* if jsx references to useEffect results, use condition to handle case before before finish execution
+                or you will get errors says "undefined"  */}
+
+            {comments.length !== 0 ?
                 <div className="comments col-md-4 col-12" >
                     <h4 className="mb-4">Latest Comments</h4>
                     {comments.map((comment, index) => (
@@ -39,8 +47,8 @@ const Comments = () => {
                     <div className="spinner-border" role='status'></div>
                 </div>
             }
-        
-</>
+
+        </>
     )
 }
 export default Comments

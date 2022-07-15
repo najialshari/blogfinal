@@ -15,8 +15,10 @@
 } */
 
 /* mainContainer used to wrap all components with lower layer z-index 1 */
+
 .mainContainer {
   margin-top: 70px;
+  
   /* z-index: 1; */
 }
 

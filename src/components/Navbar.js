@@ -37,33 +37,33 @@ const Navbar = () => {
 
 
     return (
-        <div className='navContainer'>
-            {/* mainContainer used to wrap all components with lower layer z-index 1  */}
-            <nav className='navbar fixed-top bg-dark text-white p-0'>
-                <div className='container'>
-                    <div className='col text-start py-1'>
-                        <img src={myLogo} width="90px" height="60px" alt='...' />
-                    </div>
-                    
-                    <div className='d-flex col-2 justify-content-end'>
 
-                        <Link id='home' to='/' className='nav-link p-2 me-3'
-                            onMouseEnter={mouseEnter}
-                            onMouseLeave={mouseLeave}
-                            style={{ color: colorHome }}
-                            onClick={handleLinks}
-                        >Home</Link>
-
-                        <Link id='blog' to='/blog' className='nav-link p-2 me-3'
-                            onMouseEnter={mouseEnter}
-                            onMouseLeave={mouseLeave}
-                            style={{ color: colorBlog }}
-                            onClick={handleLinks}
-                        >Blog</Link>
-
-                    </div>
+        <nav className='navbar fixed-top bg-dark text-white p-0'>
+            <div className='container'>
+                <div className='col text-start py-1'>
+                    <img src={myLogo} width="90px" height="60px" alt='...' />
                 </div>
-            </nav>
-        </div>)
+
+                <div className='d-flex col-2 justify-content-end'>
+
+                    <Link id='home' to='/' className='nav-link p-2 me-3'
+                        onMouseEnter={mouseEnter}
+                        onMouseLeave={mouseLeave}
+                        style={{ color: colorHome }}
+                        onClick={handleLinks}
+                    >Home</Link>
+
+                    <Link id='blog' to='/blog' className='nav-link p-2 me-3'
+                        onMouseEnter={mouseEnter}
+                        onMouseLeave={mouseLeave}
+                        style={{ color: colorBlog }}
+                        onClick={handleLinks}
+                    >Blog</Link>
+
+                </div>
+            </div>
+        </nav>
+
+    )
 }
 export default Navbar

@@ -39,11 +39,16 @@ const Footer = () => {
                 .catch((error) => console.error("Error connection ", error))
 
         setBegin(false)
-// eslint-disable-next-line react-hooks/exhaustive-deps
+
+        // add the next line 'eslint-...' at the end of useEffect to stop dependency warrning 
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [handleSubscribe])
 
     return (
+        
         <div className=" fluid bg-light border-top">
+        
             <div className='footer container mt-5'>
                 <div className="row">
                     <section className='col-lg-2 col-sm-4 col-12 mb-3 text-start text-muted'>
