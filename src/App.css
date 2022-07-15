@@ -18,7 +18,7 @@
 
 .mainContainer {
   margin-top: 70px;
-  
+
   /* z-index: 1; */
 }
 
@@ -27,56 +27,64 @@
 }
 
 .footer section p {
-margin-bottom :10px
+  margin-bottom: 10px
 }
 
 .copyRights {
   padding: 60px 0 120px;
 }
-.comments{
+
+.comments {
   position: sticky;
   top: 90px;
   height: fit-content;
-} 
+}
+
 @media (min-width:768px) {
-  .blogFrame{
+  .blogFrame {
     display: flex;
   }
-  
+
 }
-li{
-  list-style:none;
+
+li {
+  list-style: none;
   font-weight: bold;
-  
+
 }
 
-.mycard{
-    position: relative;
-   text-align: center;
-   top: -80px; 
-   left: 60px ;
-   /* right: 50px; */
-   width:calc(100% - 120px) ; 
-   background-color: white;
+.mycard {
+  position: relative;
+  text-align: center;
+  top: -80px;
+  left: 60px;
+  /* right: 50px; */
+  width: calc(100% - 120px);
+  background-color: white;
 
-  }
+}
+
 @media (max-width:576px) {
-  
- .mycard{
-    width:calc(100% - 30px);
-    left:15px;
+
+  .mycard {
+    width: calc(100% - 30px);
+    left: 15px;
   }
 }
 
-
-.title{
+.title {
   font-size: 50px;
   font-weight: 600px;
 }
+
 @media (max-width:1200px) {
-  
-  .title{
+
+  .title {
     font-size: 35px;
     font-weight: 200px;
-   }
- }
+  }
+}
+
+.parser img, figcaption, figure {
+  width: 100%
+}

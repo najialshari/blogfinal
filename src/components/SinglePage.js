@@ -52,7 +52,9 @@ const SinglePage = () => {
 
                                 </div>
 
-                                <article className="card-text me-3 my-4">{HTMLReactParser(blogs.data.content)}</article>
+                                <div className="parser card-text me-3 my-4">
+                                    {HTMLReactParser(blogs.data.content)}
+                                </div>
 
                             </div>
                         </div>
