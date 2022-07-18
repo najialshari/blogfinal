@@ -1,54 +1,46 @@
-import { useEffect, useRef, useState } from "react"
+import { useRef, useState } from "react"
 import { Link } from "react-router-dom"
 
 const Footer = () => {
     const emailRef = useRef()
     const [textColor, setTextColor] = useState()
     const [isBusy, setIsBusy] = useState(false)
-    const [begin, setBegin] = useState(false)
-    const [emailInput, setEmailInput] = useState('')
     const [subscribeStatus, setSubscribeStatus] = useState([])
 
+    //Because this case dosen't have dependency for useEffect
+    //we simply use a function triggers when button is clicked
+    // But be careful for output should delayed after state changed 
+
     const handleSubscribe = (e) => {
-        setBegin(true)
-        setEmailInput(emailRef.current.value)
         setIsBusy(true)
         e.target.blur()
+
+        fetch('https://www.wp-course.site/wp-json/youthink/subscribe', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({ email: emailRef.current.value })
+
+        })
+            .then((response) => response.json())
+            .then((result) => {
+                setSubscribeStatus(result)
+                setTextColor(result.success === true ? 'text-success' : 'text-danger')
+                setIsBusy(false)
+
+                setTimeout(() => {
+                    setSubscribeStatus('')
+                    emailRef.current.value = ''
+                }, 4000)
+            })
+
+            .catch((error) => console.error("Error connection ", error))
+
     }
 
-    useEffect(() => {
-
-        begin &&
-            fetch('https://www.wp-course.site/wp-json/youthink/subscribe', {
-                method: 'POST',
-                headers: { 'content-type': 'application/json' },
-                body: JSON.stringify({ email: emailInput })
-
-            })
-                .then((response) => response.json())
-                .then((result) => {
-                    setSubscribeStatus(result)
-                    setTextColor(result.success === true ? 'text-success' : 'text-danger')
-                    setIsBusy(false)
-                    setTimeout(() => {
-                        setSubscribeStatus('')
-                        emailRef.current.value = ''
-                    }, 4000)
-                })
-
-                .catch((error) => console.error("Error connection ", error))
-
-        setBegin(false)
-
-        // add the next line 'eslint-...' at the end of useEffect to stop dependency warrning 
-
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [handleSubscribe])
-
     return (
-        
+
         <div className=" fluid bg-light border-top">
-        
+
             <div className='footer container mt-5'>
                 <div className="row">
                     <section className='col-lg-2 col-sm-4 col-12 mb-3 text-start text-muted'>
